@@ -1,0 +1,18 @@
+.current {
+  background-color:honeydew;
+  color:#805c19
+}
+
+.read {
+  background-color:#dcefb0;
+  color: #2c662d
+}
+
+.not-started {
+  background-color:lightgray;
+  color:gray;
+}
+
+.bookmark {
+  color:darkgoldenrod;
+}

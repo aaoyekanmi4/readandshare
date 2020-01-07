@@ -1,0 +1,4 @@
+{
+  "mongoURI":"mongodb+srv://ao321:ao321@booksapp-bndtg.mongodb.net/test?retryWrites=true&w=majority",
+  "jwtSecret":"secret"
+}
