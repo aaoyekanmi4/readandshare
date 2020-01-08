@@ -1,8 +1,8 @@
 const express = require('express');
 const router = express.Router();
 const { check, validationResult } = require('express-validator');
-const auth = require('../../middleware/auth')
-const Book= require('../../models/Book')
+const auth = require('../middleware/auth')
+const Book= require('../models/Book')
 
 //GET all books
 router.get('/', auth,  async (req, res) => {
