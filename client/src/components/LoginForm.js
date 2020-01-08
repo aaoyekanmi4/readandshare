@@ -18,7 +18,9 @@ const LoginForm =(props)=>{
    if (isAuthenticated) {
      props.history.push('/')
    }
-   if (error ==='Invalid Credentials' || error ==='User not found') setResponseError(error);
+   if (error ==='Invalid Credentials' || 
+       error ==='User not found' || 
+       error==='Password incorrect') setResponseError(error);
    clearErrors();
    // eslint-disable-next-line
  },[isAuthenticated, error])
