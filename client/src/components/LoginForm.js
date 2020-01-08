@@ -13,12 +13,12 @@ const LoginForm =(props)=>{
   });
 
   const {email, password} = user;
-  console.log(error)
+
  useEffect(()=> {
    if (isAuthenticated) {
      props.history.push('/')
    }
-   if (error==='Invalid Credentials' || error ==='User not found') setResponseError(error);
+   if (error ==='Invalid Credentials' || error ==='User not found') setResponseError(error);
    clearErrors();
    // eslint-disable-next-line
  },[])

@@ -34,7 +34,7 @@ const BookContextProvider = (props) => {
      }
      try {
        await axios.post('/api/books', book, config)
-       console.log(books)
+     
        getBooksByUser();
      
 
@@ -71,7 +71,7 @@ const BookContextProvider = (props) => {
       }
     }
     try {
-      console.log('i ran')
+     
       
       await axios.put(`/api/books/${book.id}`, book, config)
       getBooksByUser();
@@ -83,7 +83,7 @@ const BookContextProvider = (props) => {
        const responseError= err.response.data.msg
        setError(responseError);
 
-       console.log('error ran')
+    
     }
   }
   return (

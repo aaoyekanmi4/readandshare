@@ -23,7 +23,7 @@ const SignUpForm =(props)=>{
      if(error === 'User already exists') setUserUsed(error)
      clearErrors();
      // eslint-disable-next-line
-   }, [error, isAuthenticated, props.history])
+   }, [])
   const {name, email, password, password2} = user;
   
   const validatePassword= ()=> {

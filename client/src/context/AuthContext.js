@@ -43,7 +43,6 @@ const AuthContextProvider = (props) => {
         //set the token returned from the post request to local storage
         const token = res.data.token;   
         localStorage.setItem("token", token)
-        console.log(localStorage.token)
         setToken(token)
         setIsAuthenticated(true);
         setLoading(false);
