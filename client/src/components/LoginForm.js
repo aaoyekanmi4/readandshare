@@ -21,7 +21,7 @@ const LoginForm =(props)=>{
    if (error ==='Invalid Credentials' || error ==='User not found') setResponseError(error);
    clearErrors();
    // eslint-disable-next-line
- },[])
+ },[isAuthenticated, error])
 
   const onChange = e => setUser({...user, [e.target.name]: e.target.value});
 
