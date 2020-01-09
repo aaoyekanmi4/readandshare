@@ -18,7 +18,9 @@ const Home = (props) => {
         
         <h1 className="ui header" style={{textAlign:'center', marginBottom:'140px', marginTop: '60px'}}>Book App</h1>
         {props.showFlash ?<FlashMessage color ={props.flashColor}message={props.message} />: null }
-        <BookTable clickEdit ={props.showEditBook}
+        <BookTable 
+                  clickReview ={props.showReviewBook}
+                   clickEdit ={props.showEditBook}
                    clickDelete = {props.showDeleteBook}
                />
         <button style={{marginTop:10}}

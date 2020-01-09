@@ -5,6 +5,7 @@ import DeleteBook from './components/DeleteBook';
 import Navbar from './components/Navbar'
 import SignUpForm from './components/SignUpForm';
 import LoginForm from './components/LoginForm';
+import ReviewForm from './components/ReviewForm';
 import PrivateRoute from './components/PrivateRoute'
 import Home from './components/Home'
 import useFlashMessage from './hooks/useFlashMessage'
@@ -80,6 +81,15 @@ const App = () => {
         setCrudAction(null);
         
     }
+    const showReviewBook = (book) => {
+        setbookFormData({
+            title:book.title,
+            author:book.author
+        })
+        toggleModal();
+        setCrudAction('Review');
+    }
+
 
     const showAddBook = () =>{
         setbookFormData({id:'',
@@ -137,6 +147,14 @@ const App = () => {
                     bookTitle = {bookFormData.title}
                     />
             }
+        else if (crudAction === 'Review'){
+            return <ReviewForm 
+                    formTitle ="Review " 
+                    actionText={crudAction}
+                    onSubmit={handleBookEdit}
+                    onClose={toggleModal}
+                    />
+        }
 
     }
     return( 
@@ -151,6 +169,7 @@ const App = () => {
         showEditBook={showEditBook}
         showDeleteBook={showDeleteBook}
         showAddBook = {showAddBook}
+        showReviewBook ={showReviewBook}
         isModalOpen={isModalOpen}
         pickModalChild={pickModalChild}
         toggleModal ={toggleModal}

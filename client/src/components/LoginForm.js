@@ -1,7 +1,7 @@
 import React, {useState, useContext, useEffect} from 'react';
 import { AuthContext } from '../context/AuthContext'
 import ValidationError from './ValidationError'
-
+import './rating.css'
 
 const LoginForm =(props)=>{
   const authContext = useContext(AuthContext);
@@ -11,6 +11,7 @@ const LoginForm =(props)=>{
     email:'',
     password:''
   });
+
 
   const {email, password} = user;
 
@@ -35,7 +36,7 @@ const LoginForm =(props)=>{
   
   return (
       <div style={{width:420, margin: '0 auto', marginTop:'10%'}}>
-
+      
         <form onSubmit = {onSubmit} className="ui  form" >
           
     <ValidationError message={responseError} />

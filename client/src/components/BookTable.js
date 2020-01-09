@@ -19,6 +19,7 @@ const bookEntries = books.map((book, index) =>{
             author={book.author}
             pages={book.pages}
             status={book.status}
+            review = {props.clickReview}
             edit = {props.clickEdit } 
             delete = {props.clickDelete}
             book={book}

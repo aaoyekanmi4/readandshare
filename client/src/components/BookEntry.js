@@ -30,7 +30,10 @@ const BookEntry = (props) => {
     return( 
         <tr className={displayStatusStyle(props.status)}>
          
-        <td  className="title">{displayStatusIcon(props.status)} {props.title}</td>
+        <td  className="title">{displayStatusIcon(props.status)} 
+            {props.title}
+            {props.status ==="Finished Reading" && <button className="ui button primary right floated" onClick={() =>props.review(props.book)}>Review</button>}
+        </td>
         <td className="author">{props.author}</td>
         <td className="pages">{props.pages}</td>
         <td className="status">{props.status}</td>

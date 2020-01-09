@@ -6,6 +6,7 @@ const BookForm =(props)=>{
 
     return (
         <div>
+          
           <form onSubmit = {props.onSubmit} className="ui large form" >
             <h2 className="ui dividing header">{props.formTitle}</h2>
             <div className="field">
