@@ -1,5 +1,5 @@
 import React, { useState, useContext} from 'react';
-
+import Shared from './components/Shared'
 import BookForm from './components/BookForm';
 import DeleteBook from './components/DeleteBook';
 import Navbar from './components/Navbar'
@@ -149,7 +149,8 @@ const App = () => {
             }
         else if (crudAction === 'Review'){
             return <ReviewForm 
-                    formTitle ="Review " 
+                    bookTitle = {bookFormData.title}
+                    bookAuthor = {bookFormData.author}
                     actionText={crudAction}
                     onSubmit={handleBookEdit}
                     onClose={toggleModal}
@@ -182,7 +183,7 @@ const App = () => {
 
   />
   
-    
+<Route path="/shared" component={Shared} />
 <Route path="/register" component={SignUpForm}/>
 
     

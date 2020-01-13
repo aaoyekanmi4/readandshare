@@ -23,6 +23,7 @@ const bookEntries = books.map((book, index) =>{
             edit = {props.clickEdit } 
             delete = {props.clickDelete}
             book={book}
+            toggleModal ={props.toggleModal}
     />
 
 }

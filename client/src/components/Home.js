@@ -22,6 +22,7 @@ const Home = (props) => {
                   clickReview ={props.showReviewBook}
                    clickEdit ={props.showEditBook}
                    clickDelete = {props.showDeleteBook}
+                   toggleModal = {props.toggleModal}
                />
         <button style={{marginTop:10}}
                 onClick={props.showAddBook}
