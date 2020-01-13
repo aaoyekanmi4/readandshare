@@ -17,7 +17,7 @@ const BookContextProvider = (props) => {
       try {
         const res = await axios.get('/api/books', config)
         setBooks(res.data)
- 
+        console.log(books)
  
       } catch (err) {
         const responseError= err.response.data.msg

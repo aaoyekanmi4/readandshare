@@ -1,20 +1,29 @@
-import React, { useState } from 'react';
+import React, { useState, useContext } from 'react';
 import ValidationError from './ValidationError';
+import { ReviewContext } from '../context/ReviewContext';
+import { AuthContext } from '../context/AuthContext';
 
 const ReviewForm = (props) => {
-    const [review, setReview] = useState({rating:0, text:''})
+       const reviewContext = useContext(ReviewContext);
+       const { addReview } = reviewContext;
+
+       const authContext = useContext(AuthContext);
+       const { user} = authContext;
+    const [review, setReview] = useState({userName:user.name, bookId:props.bookId, rating:'', content:''})
     const [responseError, setResponseError] = useState('');
+  
 
     const handleChange = (event) => {
        let newValue = event.target.value;
-       setReview(prevReview => ({...prevReview, text:newValue}))
+       setReview(prevReview => ({...prevReview, content:newValue}))
     }
    const handleStarRating = (stars) => {
           setReview(prevReview => ({...prevReview, rating:stars}))
    }
    const handleSubmit = (event)=>{
        event.preventDefault();
-       console.log(review)
+       setReview(prevReview => ({...prevReview}))
+       addReview(review)
        props.onClose();
    }
     return (

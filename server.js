@@ -11,6 +11,7 @@ connectDB();
 app.use(express.json({ extended: false }));
 
 // Routes
+app.use('/api/reviews', require('./routes/reviews'))
 app.use('/api/users', require('./routes/users'));
 app.use('/api/auth', require('./routes/auth'));
 app.use('/api/books', require('./routes/books'));

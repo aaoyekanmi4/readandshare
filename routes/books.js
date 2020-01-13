@@ -48,13 +48,17 @@ router.post('/', [
 
 //Edit book entry
 router.put('/:id',auth, async (req, res) => {
-  const {title, author, pages, status } = req.body;
+  const {title, author, pages, status, review_content, reviewed, rating } = req.body;
   //Build Book object
   const bookFields = {};
   if (title) bookFields.title = title;
   if (author) bookFields.author = author;
   if (pages) bookFields.pages = pages;
   if (status) bookFields.status = status;
+  if (rating) bookFields.rating = rating;
+  if  (reviewed) bookFields.reviewed = reviewed;
+  if (review_content) bookFields.review_content = review_content;
+
   try {
     let book = await Book.findById(req.params.id)
     if (!book) return res.status(404).json({msg:'Book not found'})

@@ -15,6 +15,7 @@ const bookEntries = books.map((book, index) =>{
 
  return  <BookEntry  key={index}
             id={book._id}
+            reviewed={book.reviewed}
             title={book.title}
             author={book.author}
             pages={book.pages}

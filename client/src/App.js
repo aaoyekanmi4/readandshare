@@ -83,6 +83,7 @@ const App = () => {
     }
     const showReviewBook = (book) => {
         setbookFormData({
+            id:book._id,
             title:book.title,
             author:book.author
         })
@@ -149,6 +150,7 @@ const App = () => {
             }
         else if (crudAction === 'Review'){
             return <ReviewForm 
+                    bookId = {bookFormData.id}
                     bookTitle = {bookFormData.title}
                     bookAuthor = {bookFormData.author}
                     actionText={crudAction}
