@@ -18,15 +18,31 @@ const ReviewContextProvider = (props) => {
     try {
       await axios.post('/api/reviews', review, config);
     
-      setReviews(prevReviews => prevReviews.push(review))
 
     } catch (err) {
        const responseError= err.response.data.msg
        setError(responseError);
     }
   }
+  const getReviews = async () => {
+    const config = {
+      header: {
+        'Content-Type':'application/json'
+      }
+    }
+    try {
+      const reviews = await axios.get('/api/reviews', config);
+    
+      setReviews(reviews)
+
+    } catch (err) {
+       const responseError= err.response.data.msg
+       setError(responseError);
+    }
+  }
+  
     return (
-      <ReviewContext.Provider value={{reviews, error, addReview}}>
+      <ReviewContext.Provider value={{reviews, error, addReview, getReviews}}>
          {props.children}
       </ReviewContext.Provider>
     )

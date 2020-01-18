@@ -1,9 +1,10 @@
 import React, { useState, useContext} from 'react';
-import Shared from './components/Shared'
+import Shared from './components/Reviews'
 import BookForm from './components/BookForm';
 import DeleteBook from './components/DeleteBook';
 import Navbar from './components/Navbar'
 import SignUpForm from './components/SignUpForm';
+import Reviews from './components/Reviews'
 import LoginForm from './components/LoginForm';
 import ReviewForm from './components/ReviewForm';
 import PrivateRoute from './components/PrivateRoute'
@@ -189,7 +190,7 @@ const App = () => {
 <Route path="/register" component={SignUpForm}/>
 
     
-   
+<Route path="/reviews" component={Reviews} />
 
 <Route path="/login" component={LoginForm}/>
 

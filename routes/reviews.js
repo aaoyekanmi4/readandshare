@@ -38,5 +38,15 @@ router.post('/', [
   }
 });
 
+//Get all reviews
+router.get('/', auth,  async (req, res) => {
+  try {
+    const reviews = await Review.find().sort({date: -1}) 
+    res.json(reviews);
+  } catch (err) {
+    console.error(err.message);
+    
+  }
+});
 
 module.exports = router;

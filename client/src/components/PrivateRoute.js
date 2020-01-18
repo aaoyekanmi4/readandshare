@@ -8,7 +8,7 @@ const PrivateRoute = (props) => {
 
   return (
     <Route>
-      {!isAuthenticated && !loading ?  <Redirect to="/login" /> :  props.children}
+      {!isAuthenticated && !loading ?  <Redirect to="/reviews" /> :  props.children}
     </Route>
   )
      
