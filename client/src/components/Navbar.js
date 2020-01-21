@@ -11,6 +11,7 @@ const Navbar = () => {
   }
   const authLinks = (
     <>
+    <Link to="/reviews" className="item"> Recent Reviews</Link>
     <span className="item">Signed in as {user && user.name}</span>
     <span className="item">
       <a onClick={onLogout} href="#!">

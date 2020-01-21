@@ -31,9 +31,9 @@ const ReviewContextProvider = (props) => {
       }
     }
     try {
-      const reviews = await axios.get('/api/reviews', config);
+      const res= await axios.get('/api/reviews', config);
     
-      setReviews(reviews)
+      setReviews(res.data)
 
     } catch (err) {
        const responseError= err.response.data.msg

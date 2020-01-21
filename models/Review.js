@@ -17,8 +17,14 @@ const ReviewSchema = mongoose.Schema({
   },
   date:{
     type:Date,
-
+    default:Date.now
   },
+  title:{
+    type:String
+  },
+  author:{
+    type:String
+  }
 
 
 })

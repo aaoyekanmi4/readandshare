@@ -9,7 +9,7 @@ const ReviewForm = (props) => {
 
        const authContext = useContext(AuthContext);
        const { user} = authContext;
-    const [review, setReview] = useState({userName:user.name, bookId:props.bookId, rating:'', content:''})
+    const [review, setReview] = useState({userName:user.name, bookId:props.bookId, rating:'', content:'', title:props.bookTitle, author:props.bookAuthor})
     const [responseError, setResponseError] = useState('');
   
 

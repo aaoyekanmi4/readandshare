@@ -1,24 +1,20 @@
-import React from 'react';
+import React, {useContext, useEffect} from 'react';
+import SingleReview from './SingleReview';
+import { ReviewContext } from '../context/ReviewContext'
 
 const Reviews = () => {
+
+  const bookContext = useContext(ReviewContext);
+  const { getReviews, reviews } = bookContext;
+  useEffect(()=> {
+    getReviews();
+      
+  }, [])
+  
+  const allReviews = reviews.map(review => <SingleReview date={review.date} rating ={review.rating} title={review.title} author={review.author} content={review.content} userName={review.userName} />)
+  console.log(reviews)
   return (
-    <div>
-
-<div class="ui segments" style={{width:'50%', margin:'0 auto',  marginBottom:'100px'}} >
-  <div class="ui segment" >
-    <p>blue reviewed "Sula" by Toni Morrison, Date<span style={{float:'right'}}>Liked 26 times</span></p>
-    
-  </div>
-  <div class="ui secondary segment">
-    <p>A messed up book. People going crazy. </p>
-    <button>Add Book to your List</button>
-    <button style={{float:'right', background:'transparent', border:'none'}}> Like <i class="thumbs up outline icon"></i> </button>
-  </div>
-
-</div>
-
-
-    </div>
+  <h1>{allReviews}</h1>
   ) 
 }
 

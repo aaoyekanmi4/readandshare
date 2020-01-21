@@ -20,13 +20,15 @@ router.post('/', [
   if (!errors.isEmpty()) {
     return res.status(400).json({ errors: errors.array()})
   }
-  const {bookId, userName, rating, content, date} = req.body;
+  const {bookId, userName, rating, content, author, title, date} = req.body;
   try {
     const newReview= new Review({
       bookId,
       userName,
       rating,
       content,
+      author,
+      title,
       date
     });
     const review = await newReview.save()
@@ -39,9 +41,9 @@ router.post('/', [
 });
 
 //Get all reviews
-router.get('/', auth,  async (req, res) => {
+router.get('/',  async (req, res) => {
   try {
-    const reviews = await Review.find().sort({date: -1}) 
+    const reviews = await Review.find({}).sort({date: -1}) 
     res.json(reviews);
   } catch (err) {
     console.error(err.message);
